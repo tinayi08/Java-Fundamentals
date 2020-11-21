@@ -3,7 +3,7 @@
 This project contains a variety of textbook examples and labs focused on Java labs_examples.fundamentals.
 
 ## Getting Started
-
+edit--1
 To get started with this project please follow these instructions:
 ```
 1) If you have not already installed Git - please do so: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
