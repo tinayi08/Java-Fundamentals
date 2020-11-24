@@ -2,20 +2,37 @@ Fundamentals Exercise 1: CLI
      Perform the following tasks using the CLI and copy and paste the commands and results below
 
      1. Navigate to CodingNomads folder (or the space you have create for this project)
+            Tinas-MacBook-Pro-2:codingnomads tinayi$ pwd
+            /Users/tinayi/documents/codingnomads
      2. Create new folder Terminal_testing
+            Tinas-MacBook-Pro-2:codingnomads tinayi$ mkdir Terminal_testing
      3. Inside of folder Terminal_testing,
          a. create 3 new .txt files all with different names
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ vim test1.txt
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ vim test2.txt
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ vim test3.txt
          b. print the directory path
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ pwd
+                /Users/tinayi/documents/codingnomads/Terminal_testing
          c. list the contents of the folder
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ ls
+                test1.txt	test2.txt	test3.txt
      5. Inside of folder Terminal_testing, create a new folder
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ mkdir new_folder
      6. Copy a file from Terminal_testing to the new folder
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ cp test1.txt ~/documents/codingnomads/terminal_testing/new_folder
      7. Move a different file from Terminal_testing to the new folder
+            Tinas-MacBook-Pro-2:Terminal_testing tinayi$ mv test2.txt ~/documents/codingnomads/terminal_testing/new_folder
      8. Demonstrate removing:
          a. A file
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ rm test1.txt
          b. A folder
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ rm -r ~/documents/codingnomads/terminal_testing/new_folder
      9. CHALLENGE:
          a. Use $ vim to write some text inside a file
          b. Use $ cat print contents of file
+                Tinas-MacBook-Pro-2:Terminal_testing tinayi$ cat test1.txt
+                write some text
          c. Use $ grep to search for a word inside file
 
 Example Output (pwd):
