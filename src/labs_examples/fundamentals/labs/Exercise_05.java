@@ -24,6 +24,7 @@ public class Exercise_05 {
         // for example, replace(), substring(), contains(), indexOf() etc
         String newString = str.substring(5,6);
 
+
         System.out.println(str);
         System.out.println(str2);
         System.out.println(b);

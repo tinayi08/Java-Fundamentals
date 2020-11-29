@@ -85,6 +85,7 @@ Adding a remote
 Cloning repository from Github
     1. Find a repository on Github
     2. Clone repository to local machine
+
     3. Create new repository on Github
     4. Add new remote on local machine
     5. Push to new Github repository

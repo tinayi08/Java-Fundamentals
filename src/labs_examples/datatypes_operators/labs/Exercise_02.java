@@ -1,5 +1,7 @@
 package labs_examples.datatypes_operators.labs;
 
+import java.sql.SQLOutput;
+
 /**
  * Data Types and Operators Exercise 2: Type conversion and casting
  *
@@ -24,6 +26,12 @@ public class Exercise_02 {
     public static void main(String[] args) {
 
         // write code here
+        int i = 10;
+        double d = i;
+        System.out.println("double d = " + d);
 
+        double e = 10.5;
+        int g = (int)e;
+        System.out.println("int g = " + g);
     }
 }
