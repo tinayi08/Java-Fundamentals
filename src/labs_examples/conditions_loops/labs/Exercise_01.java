@@ -1,5 +1,6 @@
 package labs_examples.conditions_loops.labs;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 /**
@@ -22,7 +23,11 @@ public class Exercise_01 {
         System.out.print("Enter a number between 1 and 1,000,000,000 to determine whether it is odd or even: ");
         // assign input to variable as int
         int number = scanner.nextInt();
-
+        if (number%2 == 0) {
+            System.out.println("Number is even");
+        } else {
+            System.out.println("Number is odd");
+        }
         // write completed code here
 
     }
