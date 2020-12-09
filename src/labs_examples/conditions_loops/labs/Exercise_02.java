@@ -33,7 +33,7 @@ public class Exercise_02 {
             System.out.println("Tuesday");
         } else if (week == 3) {
             System.out.println("Wednesday");
-        } else if (week == 4) {
+        } else if (week == 4){
             System.out.println("Thursday");
         } else if (week == 5) {
             System.out.println("Friday");
@@ -43,6 +43,19 @@ public class Exercise_02 {
             System.out.println("Sunday");
         } else {
             System.out.println("Other");
+        }
+
+        if (week > 1) {
+            if (week > 2) {
+                if (week > 3) {
+                } else {
+                    System.out.println("wed");
+                }
+            } else {
+                System.out.println("Tuesday");
+            }
+        } else {
+            System.out.println("Monday");
         }
     }
 }

@@ -16,7 +16,11 @@ class LogicalOperators {
         if (a | b){
             System.out.println("a or b is true");
         }
-
+        int x = 16 | 7;
+        // 0001 0000
+        // 0000 0111
+        // 0001 0111
+        System.out.println(x);
         // write your code below
         if (a & b) {
             System.out.println("a and be are true");
@@ -33,6 +37,7 @@ class LogicalOperators {
         }
 
         if (a ^ b) {
+            //one can be true but not both
             System.out.println("a or b is true");
         }
         if (!a) {

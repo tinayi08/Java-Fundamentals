@@ -1,4 +1,4 @@
-package labs_examples.arrays.labs;
+ package labs_examples.arrays.labs;
 
 /**
  *  Traversing Arrays Backwards
@@ -9,5 +9,16 @@ package labs_examples.arrays.labs;
  */
 
 public class Exercise_05 {
-
+    public static void main (String [] args) {
+        int[] array = new int [10];
+        for (int i = 0; i < array.length; i++) {
+            array [i] = (i+2)*2;
+        }
+        for (int i = 9; i < array.length && i >= 0; i--) {
+            if (i%2 == 0) {
+                continue;
+            }
+            System.out.println(array[i]);
+        }
+    }
 }
