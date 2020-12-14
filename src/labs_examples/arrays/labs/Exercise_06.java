@@ -31,8 +31,8 @@ public class Exercise_06 {
             // to hold a value temporarily
 
             temp = nums[i]; // temp = nums[0]
-            nums[i] = nums[nums.length-(i+1)]; // at i = 0, nums[0] = nums[6]
-            nums[nums.length-(i+1)] = temp; // at i = 0, nums [6] = temp = nums[0]
+            nums[i] = nums[nums.length-1-i]; // at i = 0, nums[0] = nums[6]
+            nums[nums.length-1-i] = temp; // at i = 0, nums [6] = temp = nums[0]
 
         }
 

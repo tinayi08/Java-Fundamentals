@@ -14,10 +14,8 @@ public class Exercise_05 {
         for (int i = 0; i < array.length; i++) {
             array [i] = (i+2)*2;
         }
-        for (int i = 9; i < array.length && i >= 0; i--) {
-            if (i%2 == 0) {
-                continue;
-            }
+        for (int i = 9; i >= 0; i-=2) {
+
             System.out.println(array[i]);
         }
     }

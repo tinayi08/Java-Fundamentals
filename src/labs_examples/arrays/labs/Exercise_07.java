@@ -1,6 +1,7 @@
 package labs_examples.arrays.labs;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *  ArrayLists
@@ -13,15 +14,16 @@ import java.util.ArrayList;
  */
 public class Exercise_07 {
     public static void main (String [] args) {
-        ArrayList <String> fruits = new ArrayList<>();
+        ArrayList<String> fruits = new ArrayList();
         fruits.add("apples");
         fruits.add("bananas");
         fruits.add("oranges");
         fruits.add("kiwi");
         fruits.add("strawberry");
+        fruits.add(4,"mango");
         fruits.add("peaches");
         System.out.println(fruits);
-
+        System.out.println(fruits.get(4));
         fruits.remove("kiwi");
         System.out.println(fruits);
         System.out.println(fruits.size());
@@ -29,6 +31,10 @@ public class Exercise_07 {
         System.out.println(fruits.lastIndexOf("apples"));
         fruits.set(1,"cranberry");
         System.out.println(fruits);
+
+
+        HashMap<String, Integer> map = new HashMap<>();
+
     }
 
 }

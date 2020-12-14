@@ -27,5 +27,6 @@ public class Exercise_02 {
                 break;
             }
         }
+        System.out.println(array.length-x);
     }
 }
