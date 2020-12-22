@@ -1,10 +1,63 @@
 package labs_examples.objects_classes_methods.labs.objects;
 
+import java.util.ArrayList;
+
 public class Airplane {
-    FuelCapacity fuelCapacity;
-    CurrentFuel currentFuel;
-    String airline;
-    int seats;
+
+    private String airline;
+    private int seats;
+    private double currentFuel;
+    private double fuelCapacity;
+    private ArrayList<JetEngine> engines = new ArrayList<>();
+    private Galley galley;
+
+    public String getAirline() {
+        return airline;
+    }
+
+    public void setAirline(String airline) {
+        this.airline = airline;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
+    public double getCurrentFuel() {
+        return currentFuel;
+    }
+
+    public void setCurrentFuel(double currentFuel) {
+        this.currentFuel = currentFuel;
+    }
+
+    public double getFuelCapacity() {
+        return fuelCapacity;
+    }
+
+    public void setFuelCapacity(double fuelCapacity) {
+        this.fuelCapacity = fuelCapacity;
+    }
+
+    public ArrayList<JetEngine> getEngines() {
+        return engines;
+    }
+
+    public void setEngines(ArrayList<JetEngine> engines) {
+        this.engines = engines;
+    }
+
+    public Galley getGalley() {
+        return galley;
+    }
+
+    public void setGalley(Galley galley) {
+        this.galley = galley;
+    }
 
     @Override
     public String toString() {
@@ -16,62 +69,135 @@ public class Airplane {
                 '}';
     }
 
-    public Airplane(FuelCapacity fuelCapacity, CurrentFuel currentFuel, String airline, int seats) {
-        this.fuelCapacity = fuelCapacity;
-        this.currentFuel = currentFuel;
-        this.airline = airline;
-        this.seats = seats;
+
+}
+class JetEngine {
+    private double thrust;
+    private int horsepower;
+    private double fuelConsumption;
+    private int turbineSpeed;
+
+    public double getThrust() {
+        return thrust;
+    }
+
+    public void setThrust(double thrust) {
+        this.thrust = thrust;
+    }
+
+    public int getHorsepower() {
+        return horsepower;
+    }
+
+    public void setHorsepower(int horsepower) {
+        this.horsepower = horsepower;
+    }
+
+    public double getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public void setFuelConsumption(double fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public int getTurbineSpeed() {
+        return turbineSpeed;
+    }
+
+    public void setTurbineSpeed(int turbineSpeed) {
+        this.turbineSpeed = turbineSpeed;
     }
 }
 
-class FuelCapacity {
-    double fuelCapacity;
+class Galley {
+    private int numFridge;
+    private int maxMeals;
+    private FoodCart cart;
 
-    @Override
-    public String toString() {
-        return "FuelCapacity{" +
-                "fuelCapacity=" + fuelCapacity +
-                '}';
+    public Galley() {
+
+    }
+    public Galley(int numFridge, int maxMeals, FoodCart cart) {
+        this.numFridge = numFridge;
+        this.maxMeals = maxMeals;
+        this.cart = cart;
     }
 
-    public FuelCapacity(double fuelCapacity) {
-        this.fuelCapacity = fuelCapacity;
+    public int getNumFridge() {
+        return numFridge;
+    }
+
+    public void setNumFridge(int numFridge) {
+        this.numFridge = numFridge;
+    }
+
+    public int getMaxMeals() {
+        return maxMeals;
+    }
+
+    public void setMaxMeals(int maxMeals) {
+        this.maxMeals = maxMeals;
+    }
+
+    public FoodCart getCart() {
+        return cart;
+    }
+
+    public void setCart(FoodCart cart) {
+        this.cart = cart;
     }
 }
 
-class CurrentFuel {
-    double currentFuel;
+class FoodCart {
+    private int numWineBottles;
+    private int numFoodTrays;
 
-    @Override
-    public String toString() {
-        return "CurrentFuel{" +
-                "currentFuel=" + currentFuel +
-                '}';
+    public int getNumWineBottles() {
+        return numWineBottles;
     }
 
-    public CurrentFuel(double currentFuel) {
-        this.currentFuel = currentFuel;
+    public void setNumWineBottles(int numWineBottles) {
+        this.numWineBottles = numWineBottles;
+    }
+
+    public int getNumFoodTrays() {
+        return numFoodTrays;
+    }
+
+    public void setNumFoodTrays(int numFoodTrays) {
+        this.numFoodTrays = numFoodTrays;
     }
 }
 
 class PlaneExample {
     public static void main(String[] args) {
-        FuelCapacity fuelCap = new FuelCapacity(300);
-        CurrentFuel curFuel = new CurrentFuel(150);
-        Airplane myPlane = new Airplane(fuelCap, curFuel, "United", 250);
-        System.out.println("My " + myPlane.airline + " airlines plane can seat " + myPlane.seats + " people. It has a fuel capacity of "
-        + myPlane.fuelCapacity.fuelCapacity + " and has current fuel level of " + myPlane.currentFuel.currentFuel + ".");
+       JetEngine engine1 = new JetEngine();
+       engine1.setThrust(500.5);
+       engine1.setFuelConsumption(50);
 
-        System.out.println("---");
-        FuelCapacity newFuelCap = new FuelCapacity(400);
-        CurrentFuel newCurFuel = new CurrentFuel(100);
-        Airplane newPlane = new Airplane(newFuelCap, newCurFuel, "American Airlines", 300);
-        System.out.println(newPlane.toString());
-        System.out.println("---");
-        FuelCapacity fuelCap1 = new FuelCapacity(100);
-        CurrentFuel curFuel1 = new CurrentFuel(80);
-        Airplane plane1 = new Airplane(fuelCap1, curFuel1, "Spirit Airlines", 150);
-        System.out.println(plane1.toString());
+       JetEngine engine2 = new JetEngine();
+       engine2.setThrust(500.5);
+       engine2.setFuelConsumption(50);
 
+       FoodCart cart = new FoodCart();
+       cart.setNumFoodTrays(100);
+       cart.setNumWineBottles(75);
+
+       Galley galley = new Galley(5, 125, cart);
+       Galley galley1 = new Galley();
+
+
+       Airplane plane = new Airplane();
+       plane.setAirline("United");
+       plane.setCurrentFuel(100);
+       plane.getEngines().add(engine1);
+       plane.getEngines().add(engine2);
+       plane.setFuelCapacity(300);
+       plane.setSeats(100);
+       plane.setGalley(galley);
+
+       System.out.println("This plane can serve up to " + plane.getGalley().getMaxMeals() + " meals");
+        System.out.println(plane.toString());
     }
 }
