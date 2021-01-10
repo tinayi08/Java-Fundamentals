@@ -3,7 +3,7 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
 /**
  * Run the class below and study the output. What prints and why?
  *
- * Your answer:
+ * Your answer: because of inheritance it is taking from class A
  *
  */
 class A {
@@ -19,6 +19,8 @@ public class Exercise_02 {
     public static void main(String[] args) {
         A a = new B();
 
+
         System.out.println(a.i);
+
     }
 }

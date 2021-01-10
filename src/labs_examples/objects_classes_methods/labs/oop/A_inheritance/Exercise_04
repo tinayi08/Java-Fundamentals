@@ -1,14 +1,18 @@
 
 Without running the code below, please tell me what it will print.
 
+it prints "Child called" --- the object is child. Parent is just the label
 
 
 public class InheritanceTest
 {
   public static void main(String[] args)
   {
-    Parent c = new Child();
-    c.doSomething();
+
+
+        Parent c = new Child();
+        c.doSomething();
+
   }
 }
 
@@ -27,3 +31,4 @@ class Child extends Parent
     System.err.println("Child called");
   }
 }
+

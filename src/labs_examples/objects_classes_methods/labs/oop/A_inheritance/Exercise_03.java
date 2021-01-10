@@ -3,7 +3,7 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
 /**
  * Why does the output print in the order it does?
  *
- * You answer:
+ * You answer: in Inheritance it is taking from the parent classes. It is reading from A to B to C
  *
  */
 
