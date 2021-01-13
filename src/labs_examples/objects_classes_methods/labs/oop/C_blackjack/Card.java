@@ -19,12 +19,10 @@ public class Card {
 
     //setting the score value of the card so J Q K equal 10
     public int getScoreValue() {
-        if (cardValue == 11) {
+        if (cardValue > 10) {
             return 10;
-        } else if (cardValue == 12) {
-            return 10;
-        } else if (cardValue == 13) {
-            return 10;
+        } else if (cardValue == 1) {
+            return 11;
         } else
             return cardValue;
     }

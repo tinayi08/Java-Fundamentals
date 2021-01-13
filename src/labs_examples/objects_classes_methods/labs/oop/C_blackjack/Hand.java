@@ -23,10 +23,9 @@ public class Hand {
         this.handValue = handValue;
     }
 
-
-    public void printHand(Player player) {
+    public void printHandFinalComp(Player player) {
         System.out.println();
-        System.out.println(player.getName() + "'s current hand:");
+        System.out.println(player.getName() + "'s hand:");
         StringBuilder sb = new StringBuilder();
         for (Card c : cards) {
             sb.append(c.getFaceValue()).append(c.getSuit()).append(" ");
@@ -34,6 +33,28 @@ public class Hand {
         System.out.println(sb.toString());
     }
 
+    public void printHand(Player player) {
+        if (player.getName().equalsIgnoreCase("computer")) {
+            System.out.println();
+            System.out.println(player.getName() + "'s current hand:");
+            StringBuilder sb = new StringBuilder();
+            //this line will get the card from array "cards" at index 0 -- 1st card
+            sb.append(cards.get(0).getFaceValue()).append(cards.get(0).getSuit()).append(" ");
+            int numRemainingCards = cards.size() - 1;
+            sb.append(numRemainingCards).append(" ").append("cards face down");
+
+            System.out.println(sb.toString());
+        }
+        else {
+            System.out.println();
+            System.out.println(player.getName() + "'s current hand:");
+            StringBuilder sb = new StringBuilder();
+            for (Card c : cards) {
+                sb.append(c.getFaceValue()).append(c.getSuit()).append(" ");
+            }
+            System.out.println(sb.toString());
+        }
+    }
 
     // will return hand value
     public int scoreTotal() {
@@ -43,13 +64,6 @@ public class Hand {
         }
         return score;
     }
-    public boolean busted () {
-        if(scoreTotal() <= 21) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     public void blackjackOrBust () {
         if (scoreTotal() > 21) {
@@ -58,6 +72,5 @@ public class Hand {
             System.out.println("Blackjack!");
         }
     }
-
 }
 

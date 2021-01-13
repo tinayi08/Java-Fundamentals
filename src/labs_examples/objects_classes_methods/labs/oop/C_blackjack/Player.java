@@ -6,7 +6,15 @@ public class Player {
     String name;
     Hand hand;
     int potValue;
-    int wager;
+    int tableBalance;
+
+    public int getTableBalance() {
+        return tableBalance;
+    }
+
+    public void setTableBalance(int tableBalance) {
+        this.tableBalance = tableBalance;
+    }
 
     public String getName() {
         return name;
@@ -32,36 +40,14 @@ public class Player {
         this.potValue = potValue;
     }
 
-    public Player(String name, int potValue) {
+    public Player(String name, int potValue, int tableBalance) {
         this.name = name;
         hand = new Hand();
         this.potValue = potValue;
+        this.tableBalance = tableBalance;
     }
     // if returns false - no more cards
     //if returns true - more cards
-    public boolean computerAI() {
-        if(hand.scoreTotal() < 16) {
-            return true;
-        } else
-            return false;
-    }
-
-    public void placeBet() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println();
-        System.out.println(name + " how much would you like to wager this round?");
-        int wager = scanner.nextInt();
-        this.wager = wager;
-    }
-
-    public int getWager() {
-        return wager;
-    }
-
-    public void setWager(int wager) {
-        this.wager = wager;
-    }
-
 
     public void dealCard(Deck deck, Player player) {
         deck.deal(this);
@@ -71,38 +57,27 @@ public class Player {
 
     }
 
-    //didnt use this one because i was unsure of how to make it loop. created moreCards2 instead with void instead of boolean
-    public boolean moreCards () {
-        Scanner scanner = new Scanner(System.in);
-        if (name.equalsIgnoreCase("computer")) {
-            while (hand.scoreTotal() < 21) {
-                System.out.println();
-                System.out.println("Computer, would you like another card?");
-                if (hand.scoreTotal() < 16) {
-                    System.out.println("Yes");
-                    return true;
-                } else {
-                    System.out.println("Computer does not want anymore cards");
-                    return false;
-                }
-            }
-            return false;
-        } else {
-            while (hand.scoreTotal() < 21) {
-                System.out.println();
-                System.out.println(name + ", would you like another card?");
-                String yesOrNo = scanner.next();
-                if (yesOrNo.equalsIgnoreCase("yes")) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-            return false;
+    public int newBalance(Player user, Player computer, BlackjackController controller){
+        int winPot = controller.winnings(user, computer);
+        int newBal = winPot + user.getTableBalance();
+        return newBal;
+    }
+
+    public void noMoreMoney (int newBal) {
+        if (newBal == 0) {
+            System.out.println("Game over, you have lost all your money. Thank you for playing.");
+            return;
         }
     }
 
-    public void moreCards2(Deck deck, Player player) {
+    public boolean exit (int newBal) {
+        if (newBal == 0) {
+            return true;
+        } else
+            return false;
+    }
+
+    public void moreCards(Deck deck, Player player) {
         Scanner scanner = new Scanner(System.in);
         if(name.equalsIgnoreCase("computer")){
             while(hand.scoreTotal() < 21) {
@@ -113,6 +88,7 @@ public class Player {
                     hand.blackjackOrBust();
                 } else {
                     System.out.println("Computer will not take anymore cards.");
+                    hand.printHandFinalComp(player);
                     return;
                 }
             }
