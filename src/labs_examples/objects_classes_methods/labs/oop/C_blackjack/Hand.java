@@ -15,28 +15,22 @@ public class Hand {
         this.cards = cards;
     }
 
-    public int getHandValue() {
-        return handValue;
-    }
-
-    public void setHandValue(int handValue) {
-        this.handValue = handValue;
-    }
 
     public void printHandFinalComp(Player player) {
         System.out.println();
-        System.out.println(player.getName() + "'s hand:");
+        System.out.println("Computer's hand:");
         StringBuilder sb = new StringBuilder();
         for (Card c : cards) {
             sb.append(c.getFaceValue()).append(c.getSuit()).append(" ");
         }
         System.out.println(sb.toString());
+        player.hand.blackjackOrBust();
     }
 
-    public void printHand(Player player) {
-        if (player.getName().equalsIgnoreCase("computer")) {
+    public void printHand(boolean computer) {
+        if (computer) {
             System.out.println();
-            System.out.println(player.getName() + "'s current hand:");
+            System.out.println("Computer's current hand:");
             StringBuilder sb = new StringBuilder();
             //this line will get the card from array "cards" at index 0 -- 1st card
             sb.append(cards.get(0).getFaceValue()).append(cards.get(0).getSuit()).append(" ");
@@ -47,7 +41,7 @@ public class Hand {
         }
         else {
             System.out.println();
-            System.out.println(player.getName() + "'s current hand:");
+            System.out.println("Your current hand:");
             StringBuilder sb = new StringBuilder();
             for (Card c : cards) {
                 sb.append(c.getFaceValue()).append(c.getSuit()).append(" ");
@@ -56,7 +50,7 @@ public class Hand {
         }
     }
 
-    // will return hand value
+
     public int scoreTotal() {
         int score = 0;
         for (Card c : cards ) {

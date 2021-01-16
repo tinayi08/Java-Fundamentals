@@ -5,9 +5,9 @@ import java.util.Random;
 
 public class Deck {
 
-    Card[] cards;
-    ArrayList<Integer> usedCards = new ArrayList<>();
-    char[] suits = new char[]{'♠', '♦', '♥', '♣'};
+    private Card[] cards;
+    private ArrayList<Integer> usedCards = new ArrayList<>();
+    private char[] suits = new char[]{'♠', '♦', '♥', '♣'};
 
     public Deck() {
         cards = new Card[52];
@@ -37,5 +37,12 @@ public class Deck {
         player.getHand().getCards().add(cards[n]);
         return;
 
+    }
+
+    public void dealInitialCards(Player user, Player computer) {
+        deal(user);
+        deal(computer);
+        deal(user);
+        deal(computer);
     }
 }
