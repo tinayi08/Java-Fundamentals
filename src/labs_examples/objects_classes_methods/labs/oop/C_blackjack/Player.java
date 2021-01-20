@@ -54,7 +54,6 @@ public class Player {
 
     public boolean viableBet (int newBet) {
         if (newBet > tableBalance) {
-
             return false;
         }
         return true;
@@ -66,14 +65,6 @@ public class Player {
             return true;
         }
         return false;
-
-    }
-
-    public boolean exit (int newBal) {
-        if (newBal == 0) {
-            return true;
-        } else
-            return false;
     }
 
     public void moreCards(Deck deck, Player player) {
@@ -99,14 +90,13 @@ public class Player {
                 if (yesOrNo.equalsIgnoreCase("yes")) {
                     deck.deal(player);
                     hand.printHand(false);
-                    hand.blackjackOrBust();
+                    blackjackOrBust();
                 } else {
                     return;
                 }
             }
         }
     }
-
 
     public void newPlayer() {
         System.out.println("Welcome to Blackjack, what is your name?");
@@ -118,12 +108,10 @@ public class Player {
         this.name = name;
         this.hand = new Hand();
 
-
     }
 
     public void placeBet() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Great, how much money would you like to bet this round?");
         int bet = scanner.nextInt();
         while (!viableBet(bet)) {
@@ -131,6 +119,14 @@ public class Player {
             bet = scanner.nextInt();
         }
         potValue += bet;
+    }
+
+    public void blackjackOrBust () {
+        if (hand.scoreTotal() > 21) {
+            System.out.println("Busted");
+        } else if (hand.scoreTotal() == 21) {
+            System.out.println("Blackjack!");
+        }
     }
 
 }

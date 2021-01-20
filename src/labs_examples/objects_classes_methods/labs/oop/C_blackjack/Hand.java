@@ -24,7 +24,7 @@ public class Hand {
             sb.append(c.getFaceValue()).append(c.getSuit()).append(" ");
         }
         System.out.println(sb.toString());
-        player.hand.blackjackOrBust();
+        player.blackjackOrBust();
     }
 
     public void printHand(boolean computer) {
@@ -32,7 +32,6 @@ public class Hand {
             System.out.println();
             System.out.println("Computer's current hand:");
             StringBuilder sb = new StringBuilder();
-            //this line will get the card from array "cards" at index 0 -- 1st card
             sb.append(cards.get(0).getFaceValue()).append(cards.get(0).getSuit()).append(" ");
             int numRemainingCards = cards.size() - 1;
             sb.append(numRemainingCards).append(" ").append("cards face down");
@@ -50,7 +49,6 @@ public class Hand {
         }
     }
 
-
     public int scoreTotal() {
         int score = 0;
         for (Card c : cards ) {
@@ -59,12 +57,5 @@ public class Hand {
         return score;
     }
 
-    public void blackjackOrBust () {
-        if (scoreTotal() > 21) {
-            System.out.println("Busted");
-        } else if (scoreTotal() == 21) {
-            System.out.println("Blackjack!");
-        }
-    }
 }
 

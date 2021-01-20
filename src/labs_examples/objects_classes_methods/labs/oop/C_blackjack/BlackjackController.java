@@ -8,8 +8,6 @@ public class BlackjackController {
 
         BlackjackController controller = new BlackjackController();
 
-
-
         Player user = new Player(false);
         user.newPlayer();
         Player computer = new Player(true);
@@ -18,10 +16,10 @@ public class BlackjackController {
             user.placeBet();
             deck.dealInitialCards(user, computer);
             user.getHand().printHand(false);
-            //user.hand.blackjackOrBust();
             computer.getHand().printHand(true);
             user.moreCards(deck, user);
             computer.moreCards(deck, computer);
+            computer.hand.printHandFinalComp(computer);
 
 
             int winningPot = controller.whoWon(user, computer);
@@ -40,7 +38,6 @@ public class BlackjackController {
         computer.getHand().getCards().clear();
     }
 
-
     public boolean nextRound() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Would you like to play again?");
@@ -49,17 +46,11 @@ public class BlackjackController {
             return true;
         } else {
             System.out.println("Game over, thank you for playing.");
-            exitGame();
             return false;
         }
     }
 
-    public void exitGame() {
-        return;
-    }
-
     public int whoWon (Player user, Player computer) {
-        computer.hand.printHandFinalComp(computer);
         System.out.println();
         int userScore = user.getHand().scoreTotal();
         int compScore = computer.getHand().scoreTotal();
