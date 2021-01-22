@@ -75,7 +75,7 @@ public class Player {
                 if (hand.scoreTotal() < 16) {
                     System.out.println("Computer will take another card.");
                     deck.deal(player);
-                    hand.printHand(true);
+                    hand.print(true);
                 } else {
                     System.out.println("Computer will not take anymore cards.");
                     return;
@@ -89,7 +89,7 @@ public class Player {
                 String yesOrNo = scanner.next();
                 if (yesOrNo.equalsIgnoreCase("yes")) {
                     deck.deal(player);
-                    hand.printHand(false);
+                    hand.print(false);
                     blackjackOrBust();
                 } else {
                     return;

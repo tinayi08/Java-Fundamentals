@@ -16,7 +16,7 @@ public class Hand {
     }
 
 
-    public void printHandFinalComp(Player player) {
+    public void printFinalComp(Player player) {
         System.out.println();
         System.out.println("Computer's hand:");
         StringBuilder sb = new StringBuilder();
@@ -27,7 +27,7 @@ public class Hand {
         player.blackjackOrBust();
     }
 
-    public void printHand(boolean computer) {
+    public void print(boolean computer) {
         if (computer) {
             System.out.println();
             System.out.println("Computer's current hand:");
