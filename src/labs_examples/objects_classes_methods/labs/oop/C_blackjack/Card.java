@@ -2,8 +2,8 @@ package labs_examples.objects_classes_methods.labs.oop.C_blackjack;
 
 public class Card {
 
-    public char suit;
-    public int cardValue;
+    private char suit;
+    private int cardValue;
 
     public char getSuit() {
         return suit;
@@ -17,22 +17,28 @@ public class Card {
         return cardValue;
     }
 
-    //setting the score value of the card so J Q K equal 10
     public int getScoreValue() {
-        if (cardValue == 11) {
+        if (cardValue > 10) {
             return 10;
-        } else if (cardValue == 12) {
-            return 10;
-        } else if (cardValue == 13) {
-            return 10;
+        } else if (cardValue == 1) {
+            return 11;
         } else
             return cardValue;
     }
 
-
-    //setting the face value of the cards Ace, J, Q, K
+    /**
+     * This method assigns a faceValue to the cardValue.
+     * CardValue of 1 is an Ace
+     * CardValue of 11 is a Jack
+     * CardValue of 12 is a Queen
+     * CardValue of 13 is a King
+     * Cards in between 1 and 11 are assigned their
+     * corresponding number value
+     *
+     * @return the FaceValue of the card that is used
+     */
     public String getFaceValue(){
-        if(cardValue == 1) {
+        if (cardValue == 1) {
             return "Ace";
         } else if (cardValue > 1 && cardValue < 11) {
             return String.valueOf(cardValue);
@@ -44,7 +50,7 @@ public class Card {
             return "King";
     }
 
-    public void setCardValue(int cardValue) {
+    private void setCardValue(int cardValue) {
         this.cardValue = cardValue;
     }
 

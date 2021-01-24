@@ -4,38 +4,59 @@ import java.util.ArrayList;
 
 public class Hand {
 
-    ArrayList<Card> cards = new ArrayList<>();
-    public int handValue;
+    private ArrayList<Card> cards = new ArrayList<>();
+    private int handValue;
 
     public ArrayList<Card> getCards() {
         return cards;
     }
 
-    public void setCards(ArrayList<Card> cards) {
+    private void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
 
-    public int getHandValue() {
-        return handValue;
-    }
-
-    public void setHandValue(int handValue) {
-        this.handValue = handValue;
-    }
-
-
-    public void printHand(Player player) {
-        System.out.println();
-        System.out.println(player.getName() + "'s current hand:");
+    /**
+     * This method will print all cards of
+     * the computer's hand
+     *
+     * @param player
+     */
+    public void printFinalComp(Player player) {
+        System.out.println("\nComputer's hand:");
         StringBuilder sb = new StringBuilder();
         for (Card c : cards) {
             sb.append(c.getFaceValue()).append(c.getSuit()).append(" ");
         }
         System.out.println(sb.toString());
+        player.blackjackOrBust();
     }
 
+    /**
+     * If the player is a computer, this method will print 1 card
+     * and specify how many cards are faced down.
+     *
+     * If the player is not a computer, this method will print
+     * all the user's cards.
+     *
+     * @param computer
+     */
+    public void print(boolean computer) {
+        StringBuilder sb = new StringBuilder();
+        if (computer) {
+            System.out.println("\nComputer's current hand:");
+            sb.append(cards.get(0).getFaceValue()).append(cards.get(0).getSuit()).append(" ");
+            int numRemainingCards = cards.size() - 1;
+            sb.append(numRemainingCards).append(" ").append("cards face down");
+        }
+        else {
+            System.out.println("\nYour current hand:");
+            for (Card c : cards) {
+                sb.append(c.getFaceValue()).append(c.getSuit()).append(" ");
+            }
+        }
+        System.out.println(sb.toString());
+    }
 
-    // will return hand value
     public int scoreTotal() {
         int score = 0;
         for (Card c : cards ) {
@@ -43,21 +64,5 @@ public class Hand {
         }
         return score;
     }
-    public boolean busted () {
-        if(scoreTotal() <= 21) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public void blackjackOrBust () {
-        if (scoreTotal() > 21) {
-            System.out.println("Busted");
-        } else if (scoreTotal() == 21) {
-            System.out.println("Blackjack!");
-        }
-    }
-
 }
 
