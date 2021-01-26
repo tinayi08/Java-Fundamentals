@@ -11,9 +11,6 @@ public class Hand {
         return cards;
     }
 
-    private void setCards(ArrayList<Card> cards) {
-        this.cards = cards;
-    }
 
     /**
      * This method will print all cards of

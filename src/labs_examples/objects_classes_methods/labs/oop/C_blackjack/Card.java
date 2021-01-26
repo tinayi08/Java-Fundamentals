@@ -49,11 +49,7 @@ public class Card {
         } else
             return "King";
     }
-
-    private void setCardValue(int cardValue) {
-        this.cardValue = cardValue;
-    }
-
+    
     public Card(char suit, int cardValue) {
         this.suit = suit;
         this.cardValue = cardValue;
