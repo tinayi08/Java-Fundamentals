@@ -11,7 +11,7 @@ public class Class1 {
         Class2.staticDifClass();
         Class2 object2 = new Class2();
         object2.nonStaticDifClass();
-        
+
     }
 
 
