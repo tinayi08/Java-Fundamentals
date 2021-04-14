@@ -20,26 +20,10 @@ public class Exercise31 {
 
     public static void main(String[] args) throws IOException {
         fileInputStream();
-        byteArrayStream();
+
 
     }
 
-    public static void byteArrayStream () {
-
-        byte[] array = {45, 97, 23, 8};
-        ByteArrayInputStream byteArray = null;
-
-//        try {
-//            byteArray = new ByteArrayInputStream(array);
-//            int i = 0;
-//            while((i = byteArray.read()) != -1) {
-//                System.out.println(i);
-//            }
-//        } catch (IOException exc) {
-//            exc.printStackTrace();
-//        }
-
-    }
 
 
     public static void fileInputStream () throws IOException {
