@@ -1,7 +1,6 @@
 package labs_examples.lambdas.labs;
 
 
-
 /**
  * Lambdas Exercise 1:
  *
@@ -25,3 +24,25 @@ package labs_examples.lambdas.labs;
  *
  *
  */
+public class Exercise1 {
+
+    public static void main(String[] args) {
+        //part 2
+        Exercise1FuncInterfaceP1 obj = () -> {
+            System.out.println("I have redefined the lambda expression");
+        };
+
+        obj.method();
+        //part 2
+        Exercise1AnonInnerClass objAnon = new Exercise1AnonInnerClass();
+        objAnon.method();
+
+        //Part 4
+        Ex1FuncInterfaceP3 obj3 = (int a) -> {
+            return a * a;
+        };
+        System.out.println(obj3.sum(5));
+        Ex1AnonInnerClassP4 obj4 = new Ex1AnonInnerClassP4();
+        System.out.println(obj4.sum(10));
+    }
+}

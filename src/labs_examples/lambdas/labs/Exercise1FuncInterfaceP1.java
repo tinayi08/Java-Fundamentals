@@ -1,7 +1,4 @@
 package labs_examples.lambdas.labs;
-
-
-
 /**
  * Lambdas Exercise 1:
  *
@@ -25,3 +22,9 @@ package labs_examples.lambdas.labs;
  *
  *
  */
+public interface Exercise1FuncInterfaceP1 {
+    //part 1
+    void method();
+
+
+}
