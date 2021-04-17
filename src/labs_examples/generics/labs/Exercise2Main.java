@@ -1,6 +1,8 @@
 package labs_examples.generics.labs;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Exercise2Main<T> {
 
@@ -13,22 +15,19 @@ public class Exercise2Main<T> {
      */
 
     public static void main(String[] args) {
-        Exercise2Main obj = new Exercise2Main();
-
-        System.out.println(obj.total());
+        ArrayList<Number> array = new ArrayList<>(Arrays.asList(10045345.123464, 2000000, 5.5));
+        ArrayList<Number> array2 = new ArrayList<>(Arrays.asList(165.33, 2.4, 3.2));
+        System.out.println(total(array2));
+        System.out.println(total(array));
     }
 
 
 
-    public double total() {
-        ArrayList<Number> array = new ArrayList<>();
-        array.add(10);
-        array.add(20);
-        array.add(5.5);
+    public static <T extends Number> long total(ArrayList<T> array) {
 
-        double sum = 0;
+        long sum = 0;
         for (int i = 0; i < array.size(); i++) {
-            sum += array.get(i).doubleValue();
+            sum += array.get(i).longValue();
         }
         return sum;
 
