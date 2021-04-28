@@ -65,7 +65,7 @@ public class CustomHashMap<K, V> {
         }
 
         // check for resize
-        if (numElements > table.length * .75) {
+        if (numElements > table.length * .50) {
             // the resize method will create a bigger underlying array and
             // add all values in the existing array to the new, larger array
             resize();
@@ -79,7 +79,7 @@ public class CustomHashMap<K, V> {
         // make a copy of the existing table and call it "old"
         Entry<K, V>[] old = table;
         // create a new Entry[] that is twice the size of the old one
-        table = new Entry[old.length * 2];
+        table = new Entry[old.length * 3];
 
         // iterate over the length of the old array
         for (int i = 0; i < old.length; i++) {
@@ -113,6 +113,7 @@ public class CustomHashMap<K, V> {
         // ensure key exists by calling the get() method
         if (get(key) == null) {
             // if the get() method returns null, there's nothing to delete
+            System.out.println("This key : " + key + " does not exist.");
             return;
         }
 
@@ -169,6 +170,7 @@ public class CustomHashMap<K, V> {
 
         // nothing at key - return null
         if (table[index] == null) {
+            System.out.println("This key : " + key + " does not exist.");
             return null;
         }
 
